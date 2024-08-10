@@ -2,8 +2,8 @@ import React from 'react';
 
 const Card = () => {
     return (
-
-        <div className='container'>
+<>
+        <div className='container'style={{marginTop:'50px',marginBottom:'50px'}} >
             <div class="row">
 
                 <div class="col-sm-3 mb-3 mb-sm-0">
@@ -48,6 +48,7 @@ const Card = () => {
 
             </div>
         </div>
+</>
     );
 };
 

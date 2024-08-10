@@ -13,8 +13,9 @@ const Slider = () => {
                 <div className="carousel-inner">
 
                     <div className="carousel-item active" data-bs-interval="3000" style={{ backgroundColor: '#f6f9fc' }}>
+
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
-                            <div className="col-lg-5 col-md-6 col-sm-8 text-center mt-4">
+                            <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.</p>
                                 <button className="btn btn-primary">Visit Collection</button>
@@ -23,11 +24,12 @@ const Slider = () => {
                                 <img src={sofaSlide} className="d-block w-100 h-auto mx-auto" alt="Sofa" style={{ maxHeight: '300px' }} />
                             </div>
                         </div>
+                        
                     </div>
 
                     <div className="carousel-item" data-bs-interval="3000"style={{ backgroundColor: '#f6f9fc' }}>
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
-                            <div className="col-lg-5 col-md-6 col-sm-8 text-center mt-4">
+                            <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.</p>
                                 <button className="btn btn-primary">Visit Collection</button>
@@ -40,7 +42,7 @@ const Slider = () => {
 
                     <div className="carousel-item" data-bs-interval="3000"style={{ backgroundColor: '#f6f9fc' }}>
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
-                            <div className="col-lg-5 col-md-6 col-sm-8 text-center mt-4">
+                            <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis lobortis consequat eu, quam etiam at quis ut convallis.</p>
                                 <button className="btn btn-primary">Visit Collection</button>

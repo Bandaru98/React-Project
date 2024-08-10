@@ -1,0 +1,9 @@
+/* Button hover effect - Show button on card hover */
+.card:hover .add-cart-btn {
+    display: inline-block;
+}
+
+/* Star hover effect - Turn stars orange on hover */
+.star-hover:hover i.bi-star {
+    color: orange;
+}
