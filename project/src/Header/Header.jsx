@@ -5,9 +5,11 @@ import logo from '../Images/achieversIT.729cfad2e184a39a319d.png'
 
 const Header = () => {
     return (
-        <div>
+        <>
+        {/* <div className='position-fixed'>  */}
+        
             <nav className="navbar navbar-expand-lg shadow p-3 bg-white rounded">
-                <div className="container-fluid">
+                <div className="container-fluid ">
                     <img src={logo} alt='logo' className="navbar-brand ms-4" style={{ height: '70px' }} />
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                         <span className="navbar-toggler-icon"></span>
@@ -39,7 +41,9 @@ const Header = () => {
                 </div>
 
             </nav>
-        </div>
+        {/* </div> */}
+
+        </>
     )
 }
 

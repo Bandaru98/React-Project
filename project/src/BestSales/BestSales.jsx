@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
-import './b.css'
 import productImg01 from "../Images/double-sofa-01.png";
 import productImg02 from "../Images/double-sofa-02.png";
-import productImg08 from "../Images/arm-chair-02.jpg";
+import productImg03 from "../Images/double-sofa-03.png";
 
-import productImg09 from "../Images/arm-chair-03.jpg";
-import phone03 from "../Images/phone-03.png";
-import phone04 from "../Images/phone-04.jpg";
-const BigDis = () => {
-
-
-    const starstyle = {
-        staricon: {
-            display: 'none'
-        }
-    }
+import productImg04 from "../Images/single-sofa-01.jpg";
+import productImg05 from "../Images/single-sofa-02.jpg";
+import productImg06 from "../Images/single-sofa-03.jpg";
+import productImg007 from "../Images/single-sofa-04.png";
+import sofaSlide from "../Images/hero-img.png";
 
 
-
+const BestSales = () => {
     const [cartItems, setCartItems] = useState(0);
 
     const handleAddToCart = () => {
@@ -26,23 +19,23 @@ const BigDis = () => {
     };
 
 
-
     return (
         <div style={{ backgroundColor: '#f6f9fc' }}>
-            <header>
+            {/* <header>
                 <h2>Cart Items: {cartItems}</h2>
-            </header>
+            </header> */}
             <div className='container'>
-                <h2 className='text-center'>Big Discount</h2>
+                <h2 className='text-center'>Best Sales</h2>
+
                 <div className="row mb-3">
                     <div className="col-sm-4 mb-4 mb-sm-0">
                         <div className="card">
                             <div className='d-flex justify-content-between p-3'>
                                 <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
+                                <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
-                                <img src={productImg01} alt="img" style={{ height: '150px' }}/>
+                                <img src={productImg01} alt="productImg01" style={{ height: '150px' }} />
                                 <h6>Stone and Beam Westview</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -71,7 +64,7 @@ const BigDis = () => {
                         <div className="card">
                             <div className='d-flex justify-content-between p-3'>
                                 <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
+                                <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
                                 <img src={productImg02} alt="productImg02" style={{ height: '150px' }} />
@@ -103,11 +96,11 @@ const BigDis = () => {
                         <div className="card">
                             <div className='d-flex justify-content-between p-3'>
                                 <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
+                                <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
-                                <img src={productImg08} alt="productImg08" style={{ height: '150px' }} />
-                                <h6>Stone and Beam Westview</h6>
+                                <img src={productImg03} alt="productImg03" style={{ height: '150px' }} />
+                                <h6>Amazon Brand Modern Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
                                         <i className="bi bi-star"></i>
@@ -118,7 +111,7 @@ const BigDis = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between p-3'>
-                                    <h6>$89</h6>
+                                    <h6>$173</h6>
                                     <button
                                         onClick={handleAddToCart}
                                         style={{ borderRadius: '50%', border: '0px' }}
@@ -133,48 +126,16 @@ const BigDis = () => {
 
                 </div>
 
-
+                {/*  */}
                 <div className="row mb-3">
                     <div className="col-sm-4 mb-4 mb-sm-0">
                         <div className="card">
                             <div className='d-flex justify-content-between p-3'>
                                 <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
+                                <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
-                                <img src={productImg09} alt="productImg09" style={{ height: '150px' }} />
-                                <h6>Stone and Beam Westview</h6>
-                                <div className='d-grid justify-content-start'>
-                                    <div className="star-hover">
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                    </div>
-                                </div>
-                                <div className='d-flex justify-content-between p-3'>
-                                    <h6>$112</h6>
-                                    <button
-                                        onClick={handleAddToCart}
-                                        style={{ borderRadius: '50%', border: '0px' }}
-                                        className="add-cart-btn"
-                                    >
-                                        +
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="col-sm-4 mb-4 mb-sm-0">
-                        <div className="card">
-                            <div className='d-flex justify-content-between p-3'>
-                                <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
-                            </div>
-                            <div className="card-body">
-                                <img src={phone03} alt="phone03" style={{ height: '150px' }} />
+                                <img src={productImg04} alt="productImg04" style={{ height: '150px' }} />
                                 <h6>Rivet Bigelow Modern</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -186,7 +147,7 @@ const BigDis = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between p-3'>
-                                    <h6>$599</h6>
+                                    <h6>$253</h6>
                                     <button
                                         onClick={handleAddToCart}
                                         style={{ borderRadius: '50%', border: '0px' }}
@@ -203,11 +164,11 @@ const BigDis = () => {
                         <div className="card">
                             <div className='d-flex justify-content-between p-3'>
                                 <button className='btn btn-info'>20% off</button>
-                                <i className="bi bi-star" style={starstyle.staricon}></i>
+                                <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
-                                <img src={phone04} alt="phone04" style={{ height: '150px' }} />
-                                <h6>Stone and Beam Westview</h6>
+                                <img src={productImg05} alt="productImg05" style={{ height: '150px' }} />
+                                <h6>Fllufy Sheep Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
                                         <i className="bi bi-star"></i>
@@ -218,7 +179,39 @@ const BigDis = () => {
                                     </div>
                                 </div>
                                 <div className='d-flex justify-content-between p-3'>
-                                    <h6>$799</h6>
+                                    <h6>$163</h6>
+                                    <button
+                                        onClick={handleAddToCart}
+                                        style={{ borderRadius: '50%', border: '0px' }}
+                                        className="add-cart-btn"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-4 mb-4 mb-sm-0">
+                        <div className="card">
+                            <div className='d-flex justify-content-between p-3'>
+                                <button className='btn btn-info'>20% off</button>
+                                <i className="bi bi-star"></i>
+                            </div>
+                            <div className="card-body">
+                                <img src={productImg06} alt="productImg06" style={{ height: '150px' }} />
+                                <h6>Fall Velvet Sofa</h6>
+                                <div className='d-grid justify-content-start'>
+                                    <div className="star-hover">
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-between p-3'>
+                                    <h6>$163</h6>
                                     <button
                                         onClick={handleAddToCart}
                                         style={{ borderRadius: '50%', border: '0px' }}
@@ -232,9 +225,88 @@ const BigDis = () => {
                     </div>
 
                 </div>
+
+
+                {/*  */}
+                <div className="row mt-4">
+
+                    <div className="col-sm-2 mb-4 mb-sm-0"></div>
+
+                    <div className="col-sm-4 mb-4 mb-sm-0">
+                        <div className="card">
+                            <div className='d-flex justify-content-between p-3'>
+                                <button className='btn btn-info'>20% off</button>
+                                <i className="bi bi-star" ></i>
+                            </div>
+                            <div className="card-body">
+                                <img src={productImg007} alt="productImg007" style={{ height: '150px' }} />
+                                <h6>Fllufy Sheep Sofa</h6>
+                                <div className='d-grid justify-content-start'>
+                                    <div className="star-hover">
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-between p-3'>
+                                    <h6>$163</h6>
+                                    <button
+                                        onClick={handleAddToCart}
+                                        style={{ borderRadius: '50%', border: '0px' }}
+                                        className="add-cart-btn"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="col-sm-4 mb-4 mb-sm-0">
+                        <div className="card">
+                            <div className='d-flex justify-content-between p-3'>
+                                <button className='btn btn-info'>20% off</button>
+                                <i className="bi bi-star" ></i>
+                            </div>
+                            <div className="card-body">
+                                <img src={sofaSlide} alt="sofaSlide" style={{ height: '150px' }} />
+                                <h6>Modern arm Sofa</h6>
+                                <div className='d-grid justify-content-start'>
+                                    <div className="star-hover">
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                        <i className="bi bi-star"></i>
+                                    </div>
+                                </div>
+                                <div className='d-flex justify-content-between p-3'>
+                                    <h6>$173</h6>
+                                    <button
+                                        onClick={handleAddToCart}
+                                        style={{ borderRadius: '50%', border: '0px' }}
+                                        className="add-cart-btn"
+                                    >
+                                        +
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div className="col-sm-2 mb-4 mb-sm-0"></div>
+
+                </div>
+
+
+
+
             </div>
         </div>
     );
 };
 
-export default BigDis;
+export default BestSales;
