@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="row">
                     <div className="col-3 mt-4 mb-4">
 
-                        <h5 className='mt-4'><span><i class="bi bi-bag-fill"></i></span> Mart</h5>
+                        <h4 className='mt-4'><span><i class="bi bi-bag-fill"></i></span> Mart</h4>
                         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime voluptatem quaerat excepturi. Illum quisquam ratione totam facilis. Vero, minima dolore.</p>
 
                     </div>

@@ -1,13 +1,17 @@
-import React from 'react'
+
 import { Link } from 'react-router-dom'
 import logo from '../Images/achieversIT.729cfad2e184a39a319d.png'
 
 
-const Header = () => {
+
+
+const Header = ({ cartItems }) => {
+
+
     return (
         <>
-        {/* <div className='position-fixed'>  */}
-        
+
+
             <nav className="navbar navbar-expand-lg shadow p-3 bg-white rounded">
                 <div className="container-fluid ">
                     <img src={logo} alt='logo' className="navbar-brand ms-4" style={{ height: '70px' }} />
@@ -32,7 +36,7 @@ const Header = () => {
                             <li>
                                 <Link className="dropdown-item nav-link me-4" to='/usercart'>
                                     <i class="bi bi-cart-fill"></i>
-                                    <span className="bg-info p-1 rounded-circle position-absolute translate-middle text-center" style={{ width: '25px', height: '25px', lineHeight: '18px' }}>0</span>
+                                    <span className="bg-info p-1 rounded-circle position-absolute translate-middle text-center" style={{ width: '25px', height: '25px', lineHeight: '18px' }}>{cartItems}</span>
                                 </Link>
                             </li>
                         </ul>
@@ -41,7 +45,7 @@ const Header = () => {
                 </div>
 
             </nav>
-        {/* </div> */}
+
 
         </>
     )

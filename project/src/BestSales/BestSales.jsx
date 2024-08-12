@@ -7,7 +7,7 @@ import productImg04 from "../Images/single-sofa-01.jpg";
 import productImg05 from "../Images/single-sofa-02.jpg";
 import productImg06 from "../Images/single-sofa-03.jpg";
 import productImg007 from "../Images/single-sofa-04.png";
-import sofaSlide from "../Images/hero-img.png";
+
 
 
 const BestSales = () => {
@@ -21,9 +21,9 @@ const BestSales = () => {
 
     return (
         <div style={{ backgroundColor: '#f6f9fc' }}>
-            {/* <header>
+            <header>
                 <h2>Cart Items: {cartItems}</h2>
-            </header> */}
+            </header>
             <div className='container'>
                 <h2 className='text-center'>Best Sales</h2>
 
@@ -135,7 +135,7 @@ const BestSales = () => {
                                 <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
-                                <img src={productImg04} alt="productImg04" style={{ height: '150px' }} />
+                                <img src={productImg02} alt="productImg02" style={{ height: '150px' }} />
                                 <h6>Rivet Bigelow Modern</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -271,7 +271,7 @@ const BestSales = () => {
                                 <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
-                                <img src={sofaSlide} alt="sofaSlide" style={{ height: '150px' }} />
+                                <img src={productImg04} alt="productImg04" style={{ height: '150px' }} />
                                 <h6>Modern arm Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">

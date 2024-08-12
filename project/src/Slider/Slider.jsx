@@ -12,7 +12,7 @@ const Slider = () => {
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
 
-                    <div className="carousel-item active" data-bs-interval="3000" >
+                    <div className="carousel-item active" data-bs-interval="3000" style={{ backgroundColor: '#f6f9fc' }}>
 
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
                             <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
