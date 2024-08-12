@@ -4,7 +4,10 @@ import Card from '../Card/Card'
 import BigDis from '../Bigdiscount/BigDis'
 import NewArrival from '../NewArrivals/NewArrival'
 import BestSales from '../BestSales/BestSales'
-// import Footer from '../Footer/Footer'
+
+
+
+
 
 
 const Parent = () => {
@@ -15,7 +18,7 @@ const Parent = () => {
             <BigDis />
             <NewArrival />
             <BestSales />
-            {/* <Footer /> */}
+
 
         </div>
     )

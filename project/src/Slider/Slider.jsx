@@ -8,11 +8,11 @@ import watchSlide from "../Images/watch-07.png";
 
 const Slider = () => {
     return (
-        <div>
+        
             <div id="carouselExampleSlidesOnly" className="carousel slide" data-bs-ride="carousel">
                 <div className="carousel-inner">
 
-                    <div className="carousel-item active" data-bs-interval="3000" style={{ backgroundColor: '#f6f9fc' }}>
+                    <div className="carousel-item active" data-bs-interval="2000" style={{ backgroundColor: '#f6f9fc' }}>
 
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
                             <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
@@ -27,7 +27,7 @@ const Slider = () => {
                         
                     </div>
 
-                    <div className="carousel-item" data-bs-interval="3000"style={{ backgroundColor: '#f6f9fc' }}>
+                    <div className="carousel-item" data-bs-interval="2000"style={{ backgroundColor: '#f6f9fc' }}>
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
                             <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
@@ -40,7 +40,7 @@ const Slider = () => {
                         </div>
                     </div>
 
-                    <div className="carousel-item" data-bs-interval="3000"style={{ backgroundColor: '#f6f9fc' }}>
+                    <div className="carousel-item" data-bs-interval="2000"style={{ backgroundColor: '#f6f9fc' }}>
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
                             <div className="col-lg-5 col-md-6 col-sm-8 mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
@@ -53,7 +53,7 @@ const Slider = () => {
                         </div>
                     </div>
 
-                    <div className="carousel-item" data-bs-interval="3000"style={{ backgroundColor: '#f6f9fc' }}>
+                    <div className="carousel-item" data-bs-interval="2000"style={{ backgroundColor: '#f6f9fc' }}>
                         <div className="row d-flex align-items-center justify-content-center" style={{ height: '500px' }}>
                             <div className="col-lg-5 col-md-6 col-sm-8 text-center mt-4">
                                 <h5>50% Off For Your First Shopping</h5>
@@ -75,77 +75,12 @@ const Slider = () => {
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="visually-hidden">N</span>
                 </button>
-            </div>
+            </div> 
+
             
-        </div>
+       
 
 
-        //     <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-        //     <div class="carousel-inner">
-        //       <div class="carousel-item active" data-bs-interval="3000">
-
-        //         <div className='row'>
-        //           <div className='col-1'></div>
-        //           <div className='col-4'>
-        //             <h5>50% Off For Your First Shopping</h5>
-        //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        //               Vel inventore ex aliquam facere eius aspernatur atque! 
-        //               Cupiditate beatae necessitatibus error dolorum voluptatem. 
-        //               Atque ea, accusamus unde enim perspiciatis iusto asperiores.</p>
-        //             <button>Visit Collection</button>
-        //           </div>
-        //           <div className='col-2'></div>
-        //           <div className='col-4'>
-        //             <img src={wireless01} class="d-block w-50" alt="..." />
-        //           </div>
-        //           <div className='col-1'></div>
-        //         </div>
-
-        //       </div>
-
-        //       <div class="carousel-item" data-bs-interval="3000">
-
-        //         <div className='row'>
-        //           <div className='col-1'></div>
-        //           <div className='col-4'>
-        //             <h5>50% Off For Your First Shopping</h5>
-        //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        //               Vel inventore ex aliquam facere eius aspernatur atque! 
-        //               Cupiditate beatae necessitatibus error dolorum voluptatem. 
-        //               Atque ea, accusamus unde enim perspiciatis iusto asperiores.</p>
-        //             <button>Visit Collection</button>
-        //           </div>
-        //           <div className='col-2'></div>
-        //           <div className='col-4'>
-        //             <img src={sofaSlide} class="d-block w-50" alt="..." />
-        //           </div>
-        //           <div className='col-1'></div>
-        //         </div>
-
-        //       </div>
-
-        //       <div class="carousel-item" data-bs-interval="3000">
-
-        //         <div className='row'>
-        //           <div className='col-1'></div>
-        //           <div className='col-4'>
-        //             <h5>50% Off For Your First Shopping</h5>
-        //             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        //               Vel inventore ex aliquam facere eius aspernatur atque! 
-        //               Cupiditate beatae necessitatibus error dolorum voluptatem. 
-        //               Atque ea, accusamus unde enim perspiciatis iusto asperiores.</p>
-        //             <button>Visit Collection</button>
-        //           </div>
-        //           <div className='col-2'></div>
-        //           <div className='col-4'>
-        //             <img src={phone08} class="d-block w-50" alt="..." />
-        //           </div>
-        //           <div className='col-1'></div>
-        //         </div>
-
-        //       </div>
-        //     </div>
-        //   </div>
     );
 }
 

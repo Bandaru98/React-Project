@@ -35,7 +35,9 @@ const BestSales = () => {
                                 <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>                    
                                 <img src={productImg01} alt="productImg01" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Stone and Beam Westview</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -67,7 +69,10 @@ const BestSales = () => {
                                 <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                 
                                 <img src={productImg02} alt="productImg02" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Rivet Bigelow Modern</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -99,7 +104,10 @@ const BestSales = () => {
                                 <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                  
                                 <img src={productImg03} alt="productImg03" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Amazon Brand Modern Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -135,7 +143,10 @@ const BestSales = () => {
                                 <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                   
                                 <img src={productImg02} alt="productImg02" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Rivet Bigelow Modern</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -167,7 +178,10 @@ const BestSales = () => {
                                 <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                 
                                 <img src={productImg05} alt="productImg05" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Fllufy Sheep Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -199,7 +213,10 @@ const BestSales = () => {
                                 <i className="bi bi-star"></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                  
                                 <img src={productImg06} alt="productImg06" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Fall Velvet Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -239,7 +256,10 @@ const BestSales = () => {
                                 <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
+                                <div className='d-flex justify-content-center'>
+                                    
                                 <img src={productImg007} alt="productImg007" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Fllufy Sheep Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
@@ -271,7 +291,9 @@ const BestSales = () => {
                                 <i className="bi bi-star" ></i>
                             </div>
                             <div className="card-body">
-                                <img src={productImg04} alt="productImg04" style={{ height: '150px' }} />
+                                <div className='d-flex justify-content-center'>
+                                    <img src={productImg04} alt="productImg04" style={{ height: '150px' }} />
+                                </div>
                                 <h6>Modern arm Sofa</h6>
                                 <div className='d-grid justify-content-start'>
                                     <div className="star-hover">
