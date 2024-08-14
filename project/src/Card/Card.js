@@ -54,19 +54,50 @@
 
 // export default Card;
 
-
+//-------------------------------------
 import React from 'react';
-import {serviceData} from '../Images/products'
+import { IonIcon } from '@ionic/react';
+import { carOutline, cardOutline, shieldHalfOutline, headsetOutline } from 'ionicons/icons';
+
+
+
+// Update the serviceData array to use icon objects instead of JSX elements
+export const serviceData = [
+  {
+    icon: carOutline,
+    title: "Free Shipping",
+    subtitle: "Lorem ipsum dolor sit amet.",
+    bg: "#fdefe6",
+  },
+  {
+    icon: cardOutline,
+    title: "Safe Payment",
+    subtitle: "Lorem ipsum dolor sit amet.",
+    bg: "#ceebe9",
+  },
+  {
+    icon: shieldHalfOutline,
+    title: "Secure Payment",
+    subtitle: "Lorem ipsum dolor sit amet.",
+    bg: "#e2f2b2",
+  },
+  {
+    icon: headsetOutline,
+    title: "Back Guarantee",
+    subtitle: "Lorem ipsum dolor sit amet.",
+    bg: "#d6e5fb",
+  },
+];
 
 const Card = () => {
   return (
-    <div className="container" style={{ marginTop: '50px', marginBottom: '50px' }}>
+    <div className="container" style={{ marginTop: '50px', marginBottom: '50px'}}>
       <div className="row">
         {serviceData.map((service, index) => (
           <div className="col-sm-3 mb-3 mb-sm-0" key={index}>
             <div className="card text-center" style={{ width: '18rem', backgroundColor: service.bg }}>
               <div className="card-body">
-                <div style={{ fontSize: '2rem' }}>{service.icon}</div>
+                <IonIcon icon={service.icon} style={{ fontSize: '2rem' }} />
                 <h5 className="card-title">{service.title}</h5>
                 <p className="card-text">{service.subtitle}</p>
               </div>
@@ -79,5 +110,6 @@ const Card = () => {
 };
 
 export default Card;
+
 
 
