@@ -54,8 +54,8 @@ const Cart = () => {
 
     return (
         <div>
-          
-          <input
+
+            <input
                 type="text"
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
@@ -70,19 +70,19 @@ const Cart = () => {
                 <option value="productImg02"> 02</option>
                 <option value="productImg03"> 03</option>
             </select>
-            <button onClick={addItem}>Add Item</button> 
+            <button onClick={addItem}>Add Item</button>
 
             <ul>
                 {items.map((item, index) => (
                     <li key={index}>
                         <div className="row align-items-center">
-                            <div className="col-8 card">
+                            <div className="col-7 card">
                                 <div className="row">
-                                    <div className="col-md-5">
+                                    <div className="col-md-6">
                                         <img src={item.icon} alt="icon" style={{ width: '20px', marginRight: '10px' }} />
                                         {item.name}
                                     </div>
-                                    <div className="col-md-7 mt-2">
+                                    <div className="col-md-6 mt-2">
                                         <h3>{item.name}</h3>
                                         <div className="d-flex justify-content-evenly align-items-center">
                                             <p>${(item.price || 193).toFixed(2)} x {item.quantity}</p>
@@ -93,16 +93,27 @@ const Cart = () => {
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+                            <div className="card col-5">
+                                <h3>Cart Summary</h3>
+                                <p>Total Price</p>
+                                <h4>${items.reduce((total, item) => total + 193 * item.quantity, 0).toFixed(2)}</h4>
+                            </div>
+
+
                         </div>
                     </li>
                 ))}
             </ul>
 
-            <div className="card col-4">
+            {/* <div className="card col-5">
                 <h3>Cart Summary</h3>
                 <p>Total Price</p>
                 <h4>${items.reduce((total, item) => total + 193 * item.quantity, 0).toFixed(2)}</h4>
-            </div>
+            </div> */}
         </div>
     );
 };

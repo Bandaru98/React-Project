@@ -10,10 +10,12 @@ import BestSales from '../BestSales/BestSales'
 
 
 
+
 const Parent = () => {
     return (
         <div>
             <Slider />
+       
             <Card />
             <BigDis />
             <NewArrival />
