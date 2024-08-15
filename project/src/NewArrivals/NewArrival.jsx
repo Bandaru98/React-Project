@@ -1,22 +1,15 @@
 
-import React, { useState } from 'react';
-import phone01 from "../Images/phone-01.jpg";
-import phone02 from "../Images/phone-02.jpg";
-import phone03 from "../Images/phone-03.png";
-import phone04 from "../Images/phone-04.jpg";
-import phone05 from "../Images/phone-05.jpg";
-import phone06 from "../Images/phone-06.jpg";
-
-import wireless01 from "../Images/wireless-01.png";
-import wireless02 from "../Images/wireless-02.png";
-import wireless03 from "../Images/wireless-03.png";
-import wireless04 from "../Images/wireless-04.png";
-// import { Link } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { products } from '../Images/products';
 
 
 const NewArrival = () => {
-  const [cartItems, setCartItems] = useState(0);
+  const [cartItems, setCartItems] = useState([]);
+
+  useEffect(() => {
+    getproducts();
+  })
 
   const handleAddToCart = () => {
     setCartItems(cartItems + 1);
@@ -24,405 +17,139 @@ const NewArrival = () => {
   };
 
 
+  const getproducts = () => {
+    let temp = [];
+
+
+    temp = products.filter((item) => {
+      return item.category === 'mobile' || item.category === 'wireless'
+
+    })
+    setCartItems(temp) // cartItems == temp
+    console.log(temp);
+
+  }
+
+
 
   return (
-    <div>
-      <header>
+    <>
+      {/* <header>
         <h2>Cart Items: {cartItems}</h2>
-      </header>
+      </header> */}
       <div className='container'>
         <h2 className='text-center'>New Arrivals</h2>
         {/*  */}
-        <div className="row mb-3">
+        <div className="row mb-3 d-flex justify-content-center">
 
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            {/* <Link to={`/product/${item.id}`} style={{ textDecoration: 'none' }}> */}
-              {/* <Link to={`/product/1`} style={{ textDecoration: 'none', color: 'inherit' }}> */}
-              <div className="card">
+          {
 
-                <div className='d-flex justify-content-between p-3'>
-                  <button className='btn btn-info'>20% off</button>
-                  <i className="bi bi-star"></i>
-                </div>
-
-
-                <div className="card-body">
-                  <div className='d-flex justify-content-center'>
-
-                    <img src={phone01} alt="phone01" style={{ height: '150px' }} />
-                  </div>
-                  <h6>Apple iPhone 12 Pro</h6>
-                  <div className='d-grid justify-content-start'>
-                    <div className="star-hover">
-                      <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
-                      <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
-                      <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
-                      <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
-                      <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+            cartItems.map((items) => (
+              <div className='col-md-4' key={items.id} >
+                <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div className='card mb-3'>
+                    <div className='d-flex justify-content-between m-2 p-3'>
+                      <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
+                      <i className="bi bi-heart-fill"></i>
+                    </div>
+                    <div className='card-body'>
+                      <div className='card-img-top d-flex justify-content-center'>
+                        <img src={items.imgUrl} className="card-img-top w-50" alt={items.id} style={{ height: '150px' }} />
+                      </div>
+                      <div className='card-title'>
+                        <h6 className="card-title">{items.productName}</h6>
+                        <span className='d-flex'>
+                          <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                          <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                          <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                          <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                          <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                        </span>
+                      </div>
+                      <div className='d-flex justify-content-between'>
+                        <h6>$ {items.price}</h6>
+                        <button onClick={handleAddToCart}
+                          style={{ border: '0px', borderRadius: '50%', width: '30px', height: '30px', paddingBottom: '4px' }}>+
+                        </button>
+                      </div>
                     </div>
                   </div>
-                  <div className='d-flex justify-content-between p-3'>
-                    <h6>$799</h6>
-                    <button
-                      onClick={handleAddToCart}
-                      style={{ borderRadius: '50%', border: '0px' }}
-                      className="add-cart-btn"
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
+                </Link>
               </div>
-            {/* </Link> */}
-            {/* </Link> */}
-          </div>
+            ))
+          }
 
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={phone02} alt="phone02" style={{ height: '150px' }} />
-                </div>
-                <h6>Apple iPhone 12 Max</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$799</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={phone03} alt="phone03" style={{ height: '150px' }} />
-                </div>
-                <h6>Realme 8</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$599</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
 
         </div>
-        {/*  */}
-
-        <div className="row mb-3">
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={phone04} alt="phone04" style={{ height: '150px' }} />
-                </div>
-                <h6>One Plus Nord</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$799</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={phone05} alt="phone05" style={{ height: '150px' }} />
-                </div>
-                <h6>apple iPhone 13 Pro</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$899</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star" ></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={phone06} alt="phone06" style={{ height: '150px' }} />
-                </div>
-                <h6>Samsung Galaxy 512</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$699</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        {/*  */}
-        <div className="row mb-3">
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={wireless01} alt="wireless01" style={{ height: '150px' }} />
-                </div>
-                <h6>Beat Studio Wireless</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$199</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star" ></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={wireless02} alt="wireless02" style={{ height: '150px' }} />
-                </div>
-                <h6>Beat EP Headphones</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$199</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={wireless03} alt="wireless03" style={{ height: '150px' }} />
-                </div>
-                <h6>Black Headphones</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$169</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-
-        {/*  */}
-
-        <div className="row mb-3">
-          <div className="col-sm-4 mb-4 mb-sm-0">
-
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-            <div className="card">
-              <div className='d-flex justify-content-between p-3'>
-                <button className='btn btn-info'>20% off</button>
-                <i className="bi bi-star"></i>
-              </div>
-              <div className="card-body">
-                <div className='d-flex justify-content-center'>
-
-                  <img src={wireless04} alt="wireless04" style={{ height: '150px' }} />
-                </div>
-                <h6>Bluetooth Headphones</h6>
-                <div className='d-grid justify-content-start'>
-                  <div className="star-hover">
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                    <i className="bi bi-star"></i>
-                  </div>
-                </div>
-                <div className='d-flex justify-content-between p-3'>
-                  <h6>$139</h6>
-                  <button
-                    onClick={handleAddToCart}
-                    style={{ borderRadius: '50%', border: '0px' }}
-                    className="add-cart-btn"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-sm-4 mb-4 mb-sm-0">
-
-          </div>
-
-        </div>
-
-
-      </div>
-    </div>
+      </div >
+    </>
   );
 };
 
 export default NewArrival;
 
 
+// import React, { useEffect, useState } from 'react';
+// import { Link } from 'react-router-dom';
+// import { products } from '../Images/products';
 
+// const NewArrival = () => {
+//   const [arrivalProducts, setArrivalProducts] = useState([]);
+
+//   useEffect(() => {
+//     getproducts();
+//   }, []); // Add empty dependency array to run only on mount
+
+//   const getproducts = () => {
+//     const temp = products.filter((item) => 
+//       item.category === 'mobile' || item.category === 'wireless'
+//     );
+//     setArrivalProducts(temp);
+//   };
+
+//   return (
+//     <div className='container'>
+//       <h2 className='text-center'>New Arrivals</h2>
+//       <div className="row mb-3 d-flex justify-content-center">
+//         {
+//           arrivalProducts.map((item) => (
+//             <div className='col-md-4' key={item.id} >
+//               <Link to={`/product/${item.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+//                 <div className='card mb-3'>
+//                   <div className='d-flex justify-content-between m-2 p-3'>
+//                     <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{item.discount}% off</span>
+//                     <i className="bi bi-heart-fill"></i>
+//                   </div>
+//                   <div className='card-body'>
+//                     <div className='card-img-top d-flex justify-content-center'>
+//                       <img src={item.imgUrl} className="card-img-top w-50" alt={item.id} style={{ height: '150px' }} />
+//                     </div>
+//                     <div className='card-title'>
+//                       <h6 className="card-title">{item.productName}</h6>
+//                       <span className='d-flex'>
+//                         <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+//                         <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+//                         <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+//                         <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+//                         <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+//                       </span>
+//                     </div>
+//                     <div className='d-flex justify-content-between'>
+//                       <h6>$ {item.price}</h6>
+//                       <button 
+//                         onClick={() => alert('Item added to cart!')}
+//                         style={{ border: '0px', borderRadius: '50%', width: '30px', height: '30px', paddingBottom: '4px' }}>+
+//                       </button>
+//                     </div>
+//                   </div>
+//                 </div>
+//               </Link>
+//             </div>
+//           ))
+//         }
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default NewArrival;

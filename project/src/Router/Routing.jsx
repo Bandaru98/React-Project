@@ -4,11 +4,6 @@ import Parent from '../Parent/Parent'
 import Shop from '../Shop/Shop'
 import Cart from '../Cart/Cart'
 import SingleProduct from '../Bigdiscount/SingleProduct'
-// import SinglePro from '../BestSales/SinglePro'
-// import SingleProdesc from '../NewArrivals/SingleProdesc'
-
-
-
 
 
 const Routing = () => {
@@ -20,14 +15,7 @@ const Routing = () => {
                     <Route path='/shop' element={<Shop />} />
                     <Route path='/cart' element={<Cart />} />
                     <Route path="/product/:id" element={<SingleProduct />} />
-                    {/* <Route path="/product/:id" element={<SinglePro />} />
-                    <Route path="/product/:id" element={<SingleProdesc/>} /> */}
-
-
-
-              
-
-
+                
                 </Routes>
             {/* </CartProvider> */}
         </>

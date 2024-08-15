@@ -6,21 +6,14 @@ import NewArrival from '../NewArrivals/NewArrival'
 import BestSales from '../BestSales/BestSales'
 
 
-
-
-
-
-
 const Parent = () => {
     return (
         <div>
-            <Slider />
-       
+            <Slider />   
             <Card />
             <BigDis />
             <NewArrival />
             <BestSales />
-
 
         </div>
     )

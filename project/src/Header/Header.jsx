@@ -9,7 +9,7 @@ const Header = () => {
         <>
 
 
-            <nav className="navbar navbar-expand-lg shadow p-3 bg-white rounded">
+            <nav className="navbar navbar-expand-lg shadow p-3 bg-white rounded sticky-top">
                 <div className="container-fluid ">
                     <img src={logo} alt='logo' className="navbar-brand ms-4" style={{ height: '70px' }} />
                     <button className="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
