@@ -4,6 +4,7 @@ import { SliderData } from '../Images/products';
 
 
 const Slider = () => {
+    
     useEffect(() => {
         const carouselElement = document.querySelector('#carouselExampleSlidesOnly');
         if (carouselElement) {
@@ -15,7 +16,7 @@ const Slider = () => {
     }, []);
 
     return (
-        <div id="carouselExampleSlidesOnly" className="carousel slide mt-2" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" className="carousel slide mt-2" data-bs-ride="carousel" style={{backgroundColor:'#f6f9fc'}}>
             <div className="carousel-inner">
                 {SliderData.map((item, index) => (
                     <div
