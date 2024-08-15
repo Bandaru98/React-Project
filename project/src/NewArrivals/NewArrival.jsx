@@ -9,7 +9,7 @@ const NewArrival = () => {
 
   useEffect(() => {
     getproducts();
-  })
+  },[])
 
   const handleAddToCart = () => {
     setCartItems(cartItems + 1);
@@ -23,7 +23,6 @@ const NewArrival = () => {
 
     temp = products.filter((item) => {
       return item.category === 'mobile' || item.category === 'wireless'
-
     })
     setCartItems(temp) // cartItems == temp
     console.log(temp);
@@ -46,7 +45,7 @@ const NewArrival = () => {
 
             cartItems.map((items) => (
               <div className='col-md-4' key={items.id} >
-                <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link to={`product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className='card mb-3'>
                     <div className='d-flex justify-content-between m-2 p-3'>
                       <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
