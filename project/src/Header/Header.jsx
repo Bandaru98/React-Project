@@ -34,6 +34,7 @@ const Header = () => {
                                 <Link className="dropdown-item nav-link me-4" to='/usercart'>
                                     <i class="bi bi-cart-fill"></i>
                                     <span className="bg-info p-1 rounded-circle position-absolute translate-middle text-center" style={{ width: '25px', height: '25px', lineHeight: '18px' }}>0</span>
+           
                                 </Link>
                             </li>
                         </ul>

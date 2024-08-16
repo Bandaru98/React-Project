@@ -9,7 +9,7 @@ import { useDispatch } from 'react-redux'
 const NewArrival = () => {
   const dispatch = useDispatch()
   const [cartItems, setCartItems] = useState([]);
- 
+
   useEffect(() => {
     getproducts();
   }, [])
@@ -44,7 +44,7 @@ const NewArrival = () => {
 
             cartItems.map((items) => (
               <div className='col-md-4' key={items.id} >
-                {/* <Link to={`product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}> */}
+              
                 <div className='card mb-3'>
                   {/* <div className='d-flex justify-content-between m-2 p-3'>
                       <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
@@ -69,15 +69,18 @@ const NewArrival = () => {
                     </div>
                     <div className='d-flex justify-content-between'>
                       <h6>$ {items.price}</h6>
-                      <button 
-                      
-                      onClick={() => { dispatch(addToCart(items)) }}
+                      <button
+
+                        onClick={() => {
+                          dispatch(addToCart(items))
+                          toast.success('Item added to cart!');
+                        }}
                         style={{ border: '0px', borderRadius: '50%', width: '30px', height: '30px', paddingBottom: '4px' }}>+
                       </button>
                     </div>
                   </div>
                 </div>
-                {/* </Link> */}
+              
               </div>
             ))
           }

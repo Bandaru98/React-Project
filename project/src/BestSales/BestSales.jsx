@@ -10,11 +10,7 @@ const BestSales = () => {
     const dispatch = useDispatch()
     const [cartItems, setCartItems] = useState([]);
 
-    // const handleAddToCart = () => {
-    //     setCartItems(cartItems + 1);
-    //     // alert('Item added to cart!');
-    //     toast.success('Item added to cart!');
-    // };
+
     useEffect(() => {
         getproducts()
     }, [])
@@ -43,16 +39,10 @@ const BestSales = () => {
                             <div className="col-sm-4 mb-sm-0" >
 
                                 <div className="card mb-3" >
-                                    {/* <div className='d-flex justify-content-between m-2 p-3'>
-                                        <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
-                                        <i className="bi bi-heart-fill"></i>
-                                    </div> */}
-
                                     <div className="card-body">
                                         <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                             <div className='d-flex justify-content-center'>
                                                 <img src={items.imgUrl} alt={items.id} style={{ height: '150px' }} />
-                                                {/* <img src={items.imgUrl} alt="phone01" className='w-50' style={{ height: '200px' }} /> */}
                                             </div>
                                         </Link>
                                         <h6>{items.productName}</h6>
@@ -68,16 +58,17 @@ const BestSales = () => {
                                         <div className='d-flex justify-content-between p-3'>
                                             <h6>{items.price}</h6>
                                             <button
-                                                // onClick={handleAddToCart}
-
-                                                onClick={() => { dispatch(addToCart(items)) }}
+                                                onClick={() => {
+                                                    dispatch(addToCart(items))
+                                                    toast.success('Item added to cart!');
+                                                }}
                                                 style={{ borderRadius: '50%', border: '0px' }}
                                                 className="add-cart-btn"
                                             >
                                                 +
                                             </button>
                                         </div>
-                                        {/* </Link> */}
+                                       
                                     </div>
                                 </div>
 
