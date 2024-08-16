@@ -9,7 +9,7 @@ import SingleProduct from '../Bigdiscount/SingleProduct'
 const Routing = () => {
     return (
         <>
-            {/* <CartProvider> */}
+          
                 <Routes>
                     <Route path='/' element={<Parent />} />
                     <Route path='/shop' element={<Shop />} />
@@ -17,7 +17,7 @@ const Routing = () => {
                     <Route path="/product/:id" element={<SingleProduct />} />
                 
                 </Routes>
-            {/* </CartProvider> */}
+          
         </>
     )
 }
