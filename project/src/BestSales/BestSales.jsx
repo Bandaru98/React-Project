@@ -29,7 +29,7 @@ const BestSales = () => {
             {/* <header>
         <h2>Cart Items: {cartItems}</h2>
       </header> */}
-            <div className='container'style={{backgroundColor:'#f6f9fc'}}>
+            <div className='container' style={{ backgroundColor: '#f6f9fc' }}>
                 <h2 className='text-center'>Best Sales</h2>
                 {/*  */}
                 <div className="row d-flex justify-content-center mb-3">
@@ -46,7 +46,7 @@ const BestSales = () => {
                                     <div className="card-body">
                                         <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                                             <div className='d-flex justify-content-center'>
-                                            <img src={items.imgUrl} alt={items.id} style={{ height: '150px' }} />
+                                                <img src={items.imgUrl} alt={items.id} style={{ height: '150px' }} />
                                                 {/* <img src={items.imgUrl} alt="phone01" className='w-50' style={{ height: '200px' }} /> */}
                                             </div>
                                             <h6>{items.productName}</h6>
@@ -86,4 +86,3 @@ const BestSales = () => {
 };
 
 export default BestSales;
-

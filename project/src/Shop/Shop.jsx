@@ -31,7 +31,7 @@ const Shop = () => {
 
     return (
         <>
-            {/* <div className="container-fluid">
+            <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
                         <img src={bgroung} alt="background" className='img-fluid w-100' style={{ maxHeight: '250px' }} />
@@ -40,7 +40,7 @@ const Shop = () => {
                         </h2>
                     </div>
                 </div>
-            </div> */}
+            </div>
 
 
             <div className='container mt-4'>
