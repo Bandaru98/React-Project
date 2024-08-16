@@ -47,7 +47,7 @@ const SingleProduct = () => {
                             <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
                             <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
                             <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
-                                <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                         <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
                                 
                            
                                 <span className='ms-4'>{product.avgRating} ratings</span>
@@ -90,17 +90,17 @@ const SingleProduct = () => {
                 <div className='row d-flex justify-content-center'>
                     {youLike.map((items) => (
                         <div key={items.id} className="col-md-4 mb-3 mt-3">
-                            <img src={items.imgUrl} alt={items.productName} className="card-img-top"  style={{ height: '250px' }} />
-                            <h5 className="card-title">{items.productName}</h5>
-                            <div className="star-hover">
+                            <img src={items.imgUrl} alt={items.productName} className="img-fluid" style={{ height: '200px' }} />
+                            <h5 className="card-title mb-2">{items.productName}</h5>
+                            <div className="star-hover mb-2">
                                 <i className="bi bi-star"></i>
                                 <i className="bi bi-star"></i>
                                 <i className="bi bi-star"></i>
                                 <i className="bi bi-star"></i>
                                 <i className="bi bi-star"></i>
                             </div>
-                            <div className='d-flex justify-content-between ms-1'>
-                                <p className="card-text">$ {items.price}</p>
+                            <div className='d-flex justify-content-between ms-2'>
+                                <p className="card-text mb-2">$ {items.price}</p>
                                 <h4>
                                     <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
                                         +

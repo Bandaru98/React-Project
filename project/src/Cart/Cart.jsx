@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import productImg01 from "../Images/double-sofa-01.png";
 import productImg02 from "../Images/double-sofa-02.png";
 import productImg03 from "../Images/double-sofa-03.png";
+// import { products } from '../Images/products';
 
 const Cart = () => {
     const [items, setItems] = useState([]);
@@ -14,6 +15,7 @@ const Cart = () => {
         productImg01,
         productImg02,
         productImg03,
+        // products,
     };
 
     // Add item with associated icon and default quantity
@@ -69,6 +71,8 @@ const Cart = () => {
                 <option value="productImg01"> 01</option>
                 <option value="productImg02"> 02</option>
                 <option value="productImg03"> 03</option>
+                {/* <option value="products">1</option> */}
+             
             </select>
             <button onClick={addItem}>Add Item</button>
 
@@ -109,11 +113,7 @@ const Cart = () => {
                 ))}
             </ul>
 
-            {/* <div className="card col-5">
-                <h3>Cart Summary</h3>
-                <p>Total Price</p>
-                <h4>${items.reduce((total, item) => total + 193 * item.quantity, 0).toFixed(2)}</h4>
-            </div> */}
+          
         </div>
     );
 };
