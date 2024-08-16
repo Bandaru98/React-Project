@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../Images/products';
-
+import { toast } from 'react-toastify';
 
 const NewArrival = () => {
   const [cartItems, setCartItems] = useState([]);
@@ -13,7 +13,8 @@ const NewArrival = () => {
 
   const handleAddToCart = () => {
     setCartItems(cartItems + 1);
-    alert('Item added to cart!');
+    // alert('Item added to cart!');
+    toast.success('Item added to cart!');
   };
 
 

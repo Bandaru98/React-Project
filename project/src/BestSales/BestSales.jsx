@@ -2,14 +2,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../Images/products';
-
-
+import { toast } from 'react-toastify';
 const BestSales = () => {
     const [cartItems, setCartItems] = useState([]);
 
     const handleAddToCart = () => {
         setCartItems(cartItems + 1);
-        alert('Item added to cart!');
+        // alert('Item added to cart!');
+        toast.success('Item added to cart!');
     };
     useEffect(() => {
         getproducts()
@@ -29,7 +29,7 @@ const BestSales = () => {
             {/* <header>
         <h2>Cart Items: {cartItems}</h2>
       </header> */}
-            <div className='container'>
+            <div className='container'style={{backgroundColor:'#f6f9fc'}}>
                 <h2 className='text-center'>Best Sales</h2>
                 {/*  */}
                 <div className="row d-flex justify-content-center mb-3">
