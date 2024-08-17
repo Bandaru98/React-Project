@@ -26,7 +26,7 @@ const Slider = () => {
                         <div className="row d-flex justify-content-center align-items-center" style={{ height: '80vh' }}>
                             <div className="col-md-1"></div>
                             <div className="col-md-4">
-                                <h3>{item.title}</h3>
+                                <h1>{item.title}</h1>
                                 <p>{item.desc}</p>
                                 <button style={{border:'none'}}>Visit Collection</button>
                             </div>

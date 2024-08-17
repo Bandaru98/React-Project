@@ -1,8 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../Images/products';
+import bgroung from '../Background/bgroung.avif';
+
+import { addToCart } from '../Redux/ProductAction/ProductAction';
+import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
 
 const SingleProduct = () => {
+    const dispatch = useDispatch()
     const { id } = useParams();
 
     const [product, setProduct] = useState({});
@@ -32,14 +38,32 @@ const SingleProduct = () => {
 
     return (
         <>
-            <div className="container mt-5">
+
+            <div className="container-fluid">
                 <div className="row">
+                    <div className="col-md-12">
+                        <img src={bgroung} alt="background" className='img-fluid w-100' style={{ maxHeight: '250px' }} />
+                        <h2 className="position-absolute bottom-50 start-50 translate-middle text-white" style={{ zIndex: 2 }}>
+                            {product.productName}
+                        </h2>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div className="container mt-5">
+
+
+                <div className="row mt-4">
                     <div className="col-md-6">
                         <img src={product.imgUrl} alt={product.productName} className="img-fluid" style={{ height: '250px' }} />
                     </div>
 
                     <div className="col-md-6">
-                        <h1>{product.productName}</h1>
+                        <h2>{product.productName}</h2>
                         <div>
                             <div className="star-hover">
                                 <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
@@ -71,7 +95,10 @@ const SingleProduct = () => {
                             />
                         </div>
 
-                        <button className="btn btn-primary mt-2">Add to Cart</button>
+                        <button className="btn btn-primary mt-2" onClick={() => {
+                            dispatch(addToCart(product));
+                            toast.success('Item added to cart!');
+                        }}>Add to Cart</button>
                     </div>
                 </div>
 

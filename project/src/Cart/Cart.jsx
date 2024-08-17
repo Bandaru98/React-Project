@@ -1,11 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from '../Redux/ProductAction/ProductAction'
-import { addToCart } from '../Redux/ProductAction/ProductAction';
-import { toast } from 'react-toastify';
+import { addToCart, removeFromCart } from '../Redux/ProductAction/ProductAction';
+
 
 const Cart = () => {
+
+  const [Value, setValue] = useState(1)
+
+  const inputValue = () => {
+    setValue(Value + 1)
+  }
+  const outputValue = () => {
+    if (Value > 0) {
+      setValue(Value - 1)
+    }
+  }
   const dispatch = useDispatch()
+
   const cart_data = useSelector((state) => state.productData.cartData)
   console.log(cart_data);
 
@@ -29,17 +40,27 @@ const Cart = () => {
 
                     </div>
                     <div className="col-md-8">
-                      <div className='card-title'>
+                      <div className='card-title d-flex justify-content-between mt-4'>
                         <h4 className="card-title">{item.productName}</h4>
+                        <h4 onClick={() => (dispatch(removeFromCart(item.id)))}><i class="bi bi-x-lg"></i></h4>
                       </div>
-                      <div className="d-flex justify-content-between align-items-center mb-4 mt-4">
-                        <h4>${item.price}</h4>
+
+                      <div className="d-flex justify-content-between align-items-center mt-4">
+
+
+
+
+                        <h6><span>${item.price}</span>*
+                          <span>{Value}</span>
+                          <span className='ms-4'>${item.price}</span>
+                        </h6>
+
+
+
                         <div>
-                          <button className='pb-1' style={{ border: '0px' }} onClick={() => {
-                            dispatch(addToCart(item));
-                            toast.success('Item added to cart!');
-                          }}>+</button>
-                          <button onClick={() => dispatch(removeFromCart(item.id))} className='ms-2' style={{ border: '0px' }}>-</button>
+
+                          <button style={{ border: '0px' }} onClick={() => inputValue()}>+</button>
+                          <button onClick={() => outputValue()} className='ms-2' style={{ border: '0px' }}>-</button>
                         </div>
                       </div>
                     </div>
