@@ -15,7 +15,6 @@ const Routing = () => {
                 <Route path='/cart' element={<Cart />} />
                 <Route path="/product/:id" element={<SingleProduct />} />
             </Routes>
-
         </>
     )
 }

@@ -1,5 +1,3 @@
-
-
 import {ACTION_TYPE} from '../Types/ActionType'
 
 export const addToCart = (product) => {

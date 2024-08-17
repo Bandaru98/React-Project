@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom'
 import logo from '../Images/achieversIT.729cfad2e184a39a319d.png'
 import { useSelector } from 'react-redux'
@@ -6,11 +5,14 @@ import { useSelector } from 'react-redux'
 const Header = () => {
 
     const cart_data = useSelector((state) => state.productData.cartData)
-    const cartdataLength = cart_data.length
+    const findSingleitem = cart_data.filter((val, index) => cart_data.indexOf(val) === index)
+    const cartdataLength = findSingleitem.length
+
+
     return (
         <>
 
-
+            {/* Header */}
             <nav className="navbar navbar-expand-lg shadow p-3 bg-white rounded sticky-top">
                 <div className="container-fluid ">
                     <img src={logo} alt='logo' className="navbar-brand ms-4" style={{ height: '70px' }} />
@@ -35,7 +37,9 @@ const Header = () => {
                             <li>
                                 <Link className="dropdown-item nav-link me-4" to='/usercart'>
                                     <i class="bi bi-cart-fill"></i>
-                                    <span className="bg-info p-1 rounded-circle position-absolute translate-middle text-center" style={{ width: '25px', height: '25px', lineHeight: '18px' }}>{cartdataLength}</span>
+                                    <span className="bg-info p-1 rounded-circle position-absolute translate-middle text-center" style={{ width: '25px', height: '25px', lineHeight: '18px' }}>
+                                        {cartdataLength}
+                                    </span>
 
                                 </Link>
                             </li>

@@ -4,7 +4,7 @@ import { SliderData } from '../Images/products';
 
 
 const Slider = () => {
-    
+
     useEffect(() => {
         const carouselElement = document.querySelector('#carouselExampleSlidesOnly');
         if (carouselElement) {
@@ -16,7 +16,7 @@ const Slider = () => {
     }, []);
 
     return (
-        <div id="carouselExampleSlidesOnly" className="carousel slide mt-2" data-bs-ride="carousel" style={{backgroundColor:'#f6f9fc'}}>
+        <div id="carouselExampleSlidesOnly" className="carousel slide mt-2" data-bs-ride="carousel" style={{ backgroundColor: '#f6f9fc' }}>
             <div className="carousel-inner">
                 {SliderData.map((item, index) => (
                     <div
@@ -28,11 +28,11 @@ const Slider = () => {
                             <div className="col-md-4">
                                 <h1>{item.title}</h1>
                                 <p>{item.desc}</p>
-                                <button style={{border:'none'}}>Visit Collection</button>
+                                <button style={{ border: 'none' }}>Visit Collection</button>
                             </div>
                             <div className="col-md-1"></div>
                             <div className="col-md-5 d-flex justify-content-center align-items-center">
-                                <img src={item.cover} className="d-block w-50" alt={item.title} style={{height:'350px'}}/>
+                                <img src={item.cover} className="d-block w-50" alt={item.title} style={{ height: '350px' }} />
                             </div>
                             <div className="col-md-1"></div>
                         </div>

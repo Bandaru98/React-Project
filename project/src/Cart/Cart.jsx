@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, removeFromCart } from '../Redux/ProductAction/ProductAction';
+import { removeFromCart } from '../Redux/ProductAction/ProductAction';
 
 
 const Cart = () => {
@@ -15,6 +15,7 @@ const Cart = () => {
       setValue(Value - 1)
     }
   }
+
   const dispatch = useDispatch()
 
   const cart_data = useSelector((state) => state.productData.cartData)
@@ -26,18 +27,19 @@ const Cart = () => {
 
   return (
     <>
-
+      {/* Cart */}
       <div className="container" style={{ backgroundColor: '#f6f9fc' }}>
         <div className="row">
+
           <div className="col-7">
             {
               cart_data && cart_data.length ? (
                 cart_data.map((item) => (
 
                   <div className="row mt-4 mb-1 ms-4 mb-3" style={{ backgroundColor: '#ffffff', height: '200px' }}>
+
                     <div className="col-md-4">
                       <img src={item.imgUrl} alt="icon" className='img-fluid' />
-
                     </div>
                     <div className="col-md-8">
                       <div className='card-title d-flex justify-content-between mt-4'>
@@ -46,19 +48,11 @@ const Cart = () => {
                       </div>
 
                       <div className="d-flex justify-content-between align-items-center mt-4">
-
-
-
-
                         <h6><span>${item.price}</span>*
                           <span>{Value}</span>
                           <span className='ms-4'>${item.price}</span>
                         </h6>
-
-
-
                         <div>
-
                           <button style={{ border: '0px' }} onClick={() => inputValue()}>+</button>
                           <button onClick={() => outputValue()} className='ms-2' style={{ border: '0px' }}>-</button>
                         </div>
@@ -66,16 +60,19 @@ const Cart = () => {
                     </div>
 
                   </div>
-
-
                 ))
               )
                 :
-                (<div className='text-center mt-4 mb-4'><h4>Empty Cart</h4></div>)
+                (<div className='text-center align-items-center mt-4 mb-4'>
+                  <h4>Empty Cart</h4>
+                </div>)
             }
 
           </div>
+
           <div className="col-1"></div>
+
+          {/* Cart Summary */}
           <div className="col-4 mt-4" style={{ height: '200px', width: '300px', backgroundColor: '#ffffff' }}>
             <h3>Cart Summary</h3><hr />
             <p>Total Price:</p>

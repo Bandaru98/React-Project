@@ -11,6 +11,11 @@ const SingleProduct = () => {
     const dispatch = useDispatch()
     const { id } = useParams();
 
+    const [Reviews, setReviews] = useState([]);
+
+
+
+
     const [product, setProduct] = useState({});
     const [youLike, setYouLike] = useState([]);
     const [quantity, setQuantity] = useState(1);
@@ -21,6 +26,7 @@ const SingleProduct = () => {
     const getData = () => {
         let temp = products.find(item => item.id === id);
         setProduct(temp);
+        setReviews(temp.reviews)
 
         if (temp) {
             let tempLike = products.filter((item) => item.category === temp.category);
@@ -38,7 +44,7 @@ const SingleProduct = () => {
 
     return (
         <>
-
+            {/* Background */}
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
@@ -51,11 +57,9 @@ const SingleProduct = () => {
             </div>
 
 
-
-
+            {/* Image Description */}
 
             <div className="container mt-5">
-
 
                 <div className="row mt-4">
                     <div className="col-md-6">
@@ -87,7 +91,7 @@ const SingleProduct = () => {
                             <input
                                 type="number"
                                 id="quantity"
-                                value={quantity} // Bind quantity state to the input
+                                value={quantity}
                                 onChange={handleQuantityChange}
                                 className="form-control"
                                 style={{ width: '70px' }}
@@ -102,10 +106,24 @@ const SingleProduct = () => {
                     </div>
                 </div>
 
-                <div className="row mt-5">
-                    <h4>Description</h4>
-                    <p>{product.description}</p>
+
+                {/* Reviews & Description */}
+                <div className="row mt-4">
+                    <h5 className='mt-4'>Description <span className='ms-2' data-bs-toggle='collapse' data-bs-target='#Example'>Reviews({Reviews.length})</span></h5>
                 </div>
+                <div className='collapse' id='Example'>
+                    <h5 className='mt-4 mb-3'>Product Ratings</h5>
+                    {
+                        Reviews.map((item) => (
+                            <div>
+
+                                <h5 style={{ color: 'orange' }}>{item.rating} (rating)</h5>
+                                <p>{item.text}</p>
+                            </div>))
+
+                    }
+                </div>
+                <p className='mb-4 mt-4'>{product.description}</p>
             </div>
 
             {/* You might like also */}
@@ -128,8 +146,10 @@ const SingleProduct = () => {
                                     <div className='d-flex justify-content-between ms-2 mt-auto'>
                                         <p className="card-text mb-2">$ {items.price}</p>
                                         <h4>
+
                                             <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
-                                                +
+                                                <button onClick={() => { dispatch(addToCart(items)); toast.success('Item added to cart!'); }
+                                                } style={{ border: 'none', borderRadius: '50%' }}>+</button>
                                             </Link>
                                         </h4>
                                     </div>
@@ -138,7 +158,7 @@ const SingleProduct = () => {
                         </div>
                     ))}
                 </div>
-            </div>
+            </div >
         </>
     );
 };
