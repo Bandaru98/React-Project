@@ -9,15 +9,13 @@ import SingleProduct from '../Bigdiscount/SingleProduct'
 const Routing = () => {
     return (
         <>
-          
-                <Routes>
-                    <Route path='/' element={<Parent />} />
-                    <Route path='/shop' element={<Shop />} />
-                    <Route path='/cart' element={<Cart />} />
-                    <Route path="/product/:id" element={<SingleProduct />} />
-                
-                </Routes>
-          
+            <Routes>
+                <Route path='/' element={<Parent />} />
+                <Route path='/shop' element={<Shop />} />
+                <Route path='/cart' element={<Cart />} />
+                <Route path="/product/:id" element={<SingleProduct />} />
+            </Routes>
+
         </>
     )
 }
