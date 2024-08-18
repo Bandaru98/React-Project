@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../Images/products';
 import { toast } from 'react-toastify';
-import bgroung from '../Background/bgroung.avif';
-
+// import bgroung from '../Background/bgroung.avif';
+import table from '../Images/table.jpg'
 import { addToCart } from '../Redux/ProductAction/ProductAction';
 import { useDispatch } from 'react-redux'
 
@@ -15,13 +15,16 @@ const Shop = () => {
         return element.category === 'sofa'
     })
 
-    const [pro, setPro] = useState(currentItem);//initial value is currentItem [sofa]
+    const [pro, setPro] = useState(currentItem); //initial value is currentItem [sofa]
 
+    const [coverdata, setCover] = useState('product')
+    // const [proname, setProname] = useState(currentItem)
     const handleChange = (x) => {
         let temp = products.filter((item) => {
             return item.category === x;
         });
         setPro(temp);
+        setCover(x)
     };
 
     const handleIn = (e) => {
@@ -31,6 +34,13 @@ const Shop = () => {
         });
         setPro(temp);
         console.log(e.target[0].value);
+
+        // if (temp) {
+        //     setProname(temp)
+        //     setCover(e.target[0].value)
+        // } else {
+        //     setProname([])
+        // }
     };
 
 
@@ -44,10 +54,10 @@ const Shop = () => {
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
-                        <img src={bgroung} alt="background" className='img-fluid w-100' style={{ maxHeight: '250px' }} />
-                        <h2 className="position-absolute bottom-50 start-50 translate-middle text-white" style={{ zIndex: 2 }}>
-                            Product
-                        </h2>
+                        <img src={table} alt="background" className='img-fluid w-100' style={{ maxHeight: '250px', filter: 'brightness(50%)' }} />
+                        <h1 className="position-absolute bottom-50 start-50 translate-middle text-white" style={{ zIndex: 2 }}>
+                            {coverdata}
+                        </h1>
                     </div>
                 </div>
             </div>

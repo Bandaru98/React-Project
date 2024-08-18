@@ -7,10 +7,10 @@ const Cart = () => {
 
   const [Value, setValue] = useState(1)
 
-  const inputValue = () => {
+  const inputValue = (item) => {
     setValue(Value + 1)
   }
-  const outputValue = () => {
+  const outputValue = (item) => {
     if (Value > 0) {
       setValue(Value - 1)
     }
@@ -50,11 +50,11 @@ const Cart = () => {
                       <div className="d-flex justify-content-between align-items-center mt-4">
                         <h6><span>${item.price}</span>*
                           <span>{Value}</span>
-                          {/* <span className='ms-4'>${item.price}</span> */}
+                          <span className='ms-4'>${item.price*Value}</span>
                         </h6>
                         <div>
-                          <button style={{ border: '0px' }} onClick={() => inputValue()}>+</button>
-                          <button onClick={() => outputValue()} className='ms-2' style={{ border: '0px' }}>-</button>
+                          <button style={{ border: '0px' }} onClick={() => inputValue(item)}>+</button>
+                          <button onClick={() => outputValue(item)} className='ms-2' style={{ border: '0px' }}>-</button>
                         </div>
                       </div>
                     </div>

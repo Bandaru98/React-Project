@@ -123,7 +123,7 @@ export default NewArrival;
 //                       <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
 //                       <i className="bi bi-heart-fill"></i>
 //                     </div> */}
-//                     <i class="bi bi-heart"></i>
+//                     <i class="bi bi-heart" style={{ top: '10px', right: '10px'}}></i>
 //                 <div className='card-body'>
 //                   <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
 //                     <div className='card-img-top d-flex justify-content-center'>

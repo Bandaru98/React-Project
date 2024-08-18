@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../Images/products';
-import bgroung from '../Background/bgroung.avif';
+// import bgroung from '../Background/bgroung.avif';
+import table from '../Images/table.jpg'
 import { addToCart } from '../Redux/ProductAction/ProductAction';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
@@ -27,8 +28,10 @@ const SingleProduct = () => {
         setReviews(temp.reviews)
 
         if (temp) {
-            let tempLike = products.filter((item) => item.category === temp.category);
+            // let tempLike = products.filter((item) => item.category === temp.category);
+            let tempLike = products.filter((item) => item.category === temp.category && item.id !== temp.id);
             setYouLike(tempLike);
+
         }
     }
 
@@ -43,11 +46,12 @@ const SingleProduct = () => {
     return (
         <>
             {/* Background */}
+
             <div className="container-fluid">
                 <div className="row">
                     <div className="col-md-12">
-                        <img src={bgroung} alt="background" className='img-fluid w-100' style={{ maxHeight: '250px' }} />
-                        <h2 className="position-absolute bottom-50 start-50 translate-middle text-white" style={{ zIndex: 2 }}>
+                        <img src={table} alt="background" className='img-fluid w-100 h-100' style={{ maxHeight: '250px', filter: 'brightness(50%)' }} />
+                        <h2 className="position-absolute bottom-50 start-50 text-center translate-middle text-white">
                             {product.productName}
                         </h2>
                     </div>
@@ -65,7 +69,7 @@ const SingleProduct = () => {
                     </div>
 
                     <div className="col-md-6">
-                        <h2>{product.productName}</h2>
+                        <h2 className='mb-4'>{product.productName}</h2>
                         <div>
                             <div className="star-hover">
                                 <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
@@ -77,12 +81,12 @@ const SingleProduct = () => {
                             </div>
                         </div>
 
-                        <div className='mt-2 mb-2'>
+                        <div className='mt-3 mb-3'>
                             <span>Price: ${product.price}</span>
                             <span className='ms-3'>Category: {product.category}</span>
                         </div>
 
-                        <p className='mt-2 mb-2'>{product.shortDesc}</p>
+                        <p className='mt-3 mb-4'>{product.shortDesc}</p>
 
                         <div className="d-flex align-items-center mb-3 mt-2">
                             <label htmlFor="quantity" className="me-2">Quantity:</label>
@@ -97,7 +101,7 @@ const SingleProduct = () => {
                             />
                         </div>
 
-                        <button className="btn btn-primary mt-2" onClick={() => {
+                        <button className="btn mt-4 text-white"style={{backgroundColor: '#0f3460'}} onClick={() => {
                             dispatch(addToCart(product));
                             toast.success('Item added to cart!');
                         }}>Add to Cart</button>
@@ -133,13 +137,13 @@ const SingleProduct = () => {
                             <div className="img-top card">
                                 <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
                                 <div className="card-body d-flex flex-column">
-                                    <h5 className="card-title mb-2">{items.productName}</h5>
-                                    <div className="star-hover mb-2">
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
-                                        <i className="bi bi-star"></i>
+                                    <h5 className="card-title mb-4">{items.productName}</h5>
+                                    <div className="star-hover mb-4">
+                                        <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
                                     </div>
                                     <div className='d-flex justify-content-between ms-2 mt-auto'>
                                         <p className="card-text mb-2">$ {items.price}</p>
