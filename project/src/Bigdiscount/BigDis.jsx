@@ -17,18 +17,36 @@ const BigDis = () => {
         <div className='row'>
 
           {discoutProducts.map((items) => (
-            <div className='col-md-4' key={items.id} >
-              <div className='card mb-3'>
+            <div className='col-md-4' key={items.id}
+              onMouseEnter={() => setHoveredCardId(items.id)}
+              onMouseLeave={() => setHoveredCardId(null)} >
+
+              <div className='card mb-3' style={{ position: 'relative' }}>
                 <div className='d-flex justify-content-between m-2 p-3'>
                   <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
-                  <i className="bi bi-heart-fill" style={{ display: hoveredCardId === items.id ? 'block' : 'none' }}></i>
                 </div>
+                {hoveredCardId === items.id && (
+                  <div>
+                    <i className="bi bi-heart heart-icon" style={{ position: 'absolute', top: '10px', right: '10px' }} ></i>
+                    <button
+                      className="add-to-cart-btn"
+                      onClick={() => {
+                        dispatch(addToCart(items));
+                        toast.success('Item added to cart!');
+                      }}
+                      style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white' }}  >
+                      +
+                    </button>
+                  </div>
+                )}
+
                 <div className='card-body'>
                   <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                     <div className='card-img-top d-flex justify-content-center'>
                       <img src={items.imgUrl} alt={items.id} style={{ height: '150px' }} />
                     </div>
                   </Link>
+
                   <div className='card-title'>
                     <h6 className="card-title">{items.productName}</h6>
                     <span className='d-flex'>
@@ -41,15 +59,6 @@ const BigDis = () => {
                   </div>
                   <div className='d-flex justify-content-between'>
                     <h6>$ {items.price}</h6>
-                    <button
-                      onMouseEnter={() => setHoveredCardId(items.id)}
-                      onMouseLeave={() => setHoveredCardId(null)}
-                      onClick={() => {
-                        dispatch(addToCart(items));
-                        toast.success('Item added to cart!');
-                      }}
-                      style={{ border: '0px', borderRadius: '50%', width: '30px', height: '30px', paddingBottom: '4px' }}>+
-                    </button>
                   </div>
                 </div>
               </div>
@@ -62,5 +71,4 @@ const BigDis = () => {
 };
 
 export default BigDis;
-
 

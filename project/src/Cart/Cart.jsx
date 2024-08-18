@@ -50,7 +50,7 @@ const Cart = () => {
                       <div className="d-flex justify-content-between align-items-center mt-4">
                         <h6><span>${item.price}</span>*
                           <span>{Value}</span>
-                          <span className='ms-4'>${item.price}</span>
+                          {/* <span className='ms-4'>${item.price}</span> */}
                         </h6>
                         <div>
                           <button style={{ border: '0px' }} onClick={() => inputValue()}>+</button>

@@ -2,23 +2,21 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { products } from '../Images/products';
 import bgroung from '../Background/bgroung.avif';
-
 import { addToCart } from '../Redux/ProductAction/ProductAction';
 import { toast } from 'react-toastify';
 import { useDispatch } from 'react-redux';
 
 const SingleProduct = () => {
+
     const dispatch = useDispatch()
     const { id } = useParams();
 
     const [Reviews, setReviews] = useState([]);
 
-
-
-
     const [product, setProduct] = useState({});
     const [youLike, setYouLike] = useState([]);
     const [quantity, setQuantity] = useState(1);
+
     useEffect(() => {
         getData();
     }, [id]);
@@ -132,8 +130,8 @@ const SingleProduct = () => {
                 <div className='row d-flex justify-content-center'>
                     {youLike.map((items) => (
                         <div key={items.id} className="col-md-4 mb-4 mt-4">
-                            <div className="card h-100">
-                                <img src={items.imgUrl} alt={items.productName} className="img-fluid" style={{ height: '200px' }} />
+                            <div className="img-top card">
+                                <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
                                 <div className="card-body d-flex flex-column">
                                     <h5 className="card-title mb-2">{items.productName}</h5>
                                     <div className="star-hover mb-2">
