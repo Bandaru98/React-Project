@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { products } from '../Images/products';
 // import bgroung from '../Background/bgroung.avif';
 import table from '../Images/table.jpg'
@@ -9,8 +9,16 @@ import { useDispatch } from 'react-redux';
 
 const SingleProduct = () => {
 
+    {/* Smoothpageup variable */ }
+    const { pathname } = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
+
     const dispatch = useDispatch()
     const { id } = useParams();
+
+
 
     const [Reviews, setReviews] = useState([]);
 
@@ -135,9 +143,11 @@ const SingleProduct = () => {
                         <div key={items.id} className="col-md-4">
                             <div className='card g-2 mb-4'>
                                 <div className="card-img-top mt-4">
-                                    <div className='d-flex justify-content-center'>
-                                        <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
-                                    </div>
+                                    <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
+                                        <div className='d-flex justify-content-center'>
+                                            <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
+                                        </div>
+                                    </Link>
                                     <div className="card-body d-flex flex-column">
                                         <h5 className="card-title mb-4">{items.productName}</h5>
                                         <div className="star-hover mb-3">
@@ -151,10 +161,10 @@ const SingleProduct = () => {
                                             <p className="card-text mb-3">$ {items.price}</p>
                                             <h4>
 
-                                                <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
-                                                    <button onClick={() => { dispatch(addToCart(items)); toast.success('Item added to cart!'); }
-                                                    } style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white' }} >+</button>
-                                                </Link>
+                                                {/* <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}> */}
+                                                <button onClick={() => { dispatch(addToCart(items)); toast.success('Item added to cart!'); }
+                                                } style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white' }} >+</button>
+                                                {/* </Link> */}
                                             </h4>
                                         </div>
                                     </div>

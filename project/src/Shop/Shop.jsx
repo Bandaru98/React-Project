@@ -1,14 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // import { discoutProducts } from '../Images/products';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { products } from '../Images/products';
 import { toast } from 'react-toastify';
-// import bgroung from '../Background/bgroung.avif';
 import table from '../Images/table.jpg'
 import { addToCart } from '../Redux/ProductAction/ProductAction';
 import { useDispatch } from 'react-redux'
 
 const Shop = () => {
+
+    //useLocation acts as a object in that pathname variable works as a /shop like that --------
+
+    // const pathname=useLocation()
+    // console.log(pathname);
+
+    //Smoothpageup variable ------ 
+
+    const { pathname } = useLocation()
+    useEffect(() => {
+        window.scrollTo(0, 0)
+    }, [pathname])
+
+
     const dispatch = useDispatch();
     // filtering category sofa---
     const currentItem = products.filter((element) => {
@@ -114,7 +127,7 @@ const Shop = () => {
                                                     dispatch(addToCart(items));
                                                     handleAddToCart();
                                                 }}
-                                                style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white', width: '30px', height: '30px' }}  
+                                                style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white', width: '30px', height: '30px' }}
                                                 className="add-cart-btn"
                                             >
                                                 +
