@@ -114,7 +114,7 @@ const Shop = () => {
                                                     dispatch(addToCart(items));
                                                     handleAddToCart();
                                                 }}
-                                                style={{ borderRadius: '50%', border: '0px' }}
+                                                style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white', width: '30px', height: '30px' }}  
                                                 className="add-cart-btn"
                                             >
                                                 +

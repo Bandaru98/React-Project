@@ -34,7 +34,7 @@ const BigDis = () => {
                         dispatch(addToCart(items));
                         toast.success('Item added to cart!');
                       }}
-                      style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white' }}  >
+                      style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white'}}  >
                       +
                     </button>
                   </div>

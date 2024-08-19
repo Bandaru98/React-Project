@@ -7,10 +7,10 @@ const Cart = () => {
 
   const [Value, setValue] = useState(1)
 
-  const inputValue = (item) => {
+  const inputValue = () => {
     setValue(Value + 1)
   }
-  const outputValue = (item) => {
+  const outputValue = () => {
     if (Value > 0) {
       setValue(Value - 1)
     }
@@ -44,17 +44,19 @@ const Cart = () => {
                     <div className="col-md-8">
                       <div className='card-title d-flex justify-content-between mt-4'>
                         <h4 className="card-title">{item.productName}</h4>
-                        <h4 onClick={() => (dispatch(removeFromCart(item.id)))}><i class="bi bi-x-lg"></i></h4>
+                        <h4 onClick={() => (dispatch(removeFromCart(item.id)))}>
+                          <i class="bi bi-x-lg"></i>
+                        </h4>
                       </div>
 
                       <div className="d-flex justify-content-between align-items-center mt-4">
                         <h6><span>${item.price}</span>*
                           <span>{Value}</span>
-                          <span className='ms-4'>${item.price*Value}</span>
+                          <span className='ms-3'>${item.price * Value}</span>
                         </h6>
                         <div>
-                          <button style={{ border: '0px' }} onClick={() => inputValue(item)}>+</button>
-                          <button onClick={() => outputValue(item)} className='ms-2' style={{ border: '0px' }}>-</button>
+                          <button style={{ border: '0px', width: '25px', height: '25px', backgroundColor: '#0f3460', color: 'white', paddingBottom: '3px' }} onClick={() => inputValue()}>+</button>
+                          <button onClick={() => outputValue()} className='ms-2' style={{ border: '0px', width: '25px', height: '25px', backgroundColor: '#0f3460', color: 'white', paddingBottom: '3px' }}>-</button>
                         </div>
                       </div>
                     </div>

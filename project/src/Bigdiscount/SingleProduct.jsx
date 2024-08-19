@@ -101,7 +101,7 @@ const SingleProduct = () => {
                             />
                         </div>
 
-                        <button className="btn mt-4 text-white"style={{backgroundColor: '#0f3460'}} onClick={() => {
+                        <button className="btn mt-4 text-white" style={{ backgroundColor: '#0f3460' }} onClick={() => {
                             dispatch(addToCart(product));
                             toast.success('Item added to cart!');
                         }}>Add to Cart</button>
@@ -118,7 +118,6 @@ const SingleProduct = () => {
                     {
                         Reviews.map((item) => (
                             <div>
-
                                 <h5 style={{ color: 'orange' }}>{item.rating} (rating)</h5>
                                 <p>{item.text}</p>
                             </div>))
@@ -133,27 +132,31 @@ const SingleProduct = () => {
                 <h3>You might like also</h3>
                 <div className='row d-flex justify-content-center'>
                     {youLike.map((items) => (
-                        <div key={items.id} className="col-md-4 mb-4 mt-4">
-                            <div className="img-top card">
-                                <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
-                                <div className="card-body d-flex flex-column">
-                                    <h5 className="card-title mb-4">{items.productName}</h5>
-                                    <div className="star-hover mb-4">
-                                        <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
-                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
-                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
-                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
-                                        <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                        <div key={items.id} className="col-md-4">
+                            <div className='card g-2 mb-4'>
+                                <div className="card-img-top mt-4">
+                                    <div className='d-flex justify-content-center'>
+                                        <img src={items.imgUrl} alt={items.productName} style={{ height: '150px' }} />
                                     </div>
-                                    <div className='d-flex justify-content-between ms-2 mt-auto'>
-                                        <p className="card-text mb-2">$ {items.price}</p>
-                                        <h4>
+                                    <div className="card-body d-flex flex-column">
+                                        <h5 className="card-title mb-4">{items.productName}</h5>
+                                        <div className="star-hover mb-3">
+                                            <i className="bi bi-star-fill" style={{ color: '#ffcd4e' }}></i>
+                                            <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                            <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                            <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                            <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
+                                        </div>
+                                        <div className='d-flex justify-content-between mt-auto'>
+                                            <p className="card-text mb-3">$ {items.price}</p>
+                                            <h4>
 
-                                            <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
-                                                <button onClick={() => { dispatch(addToCart(items)); toast.success('Item added to cart!'); }
-                                                } style={{ border: 'none', borderRadius: '50%' }}>+</button>
-                                            </Link>
-                                        </h4>
+                                                <Link to={`/product/${items.id}`} style={{ textDecoration: 'none' }}>
+                                                    <button onClick={() => { dispatch(addToCart(items)); toast.success('Item added to cart!'); }
+                                                    } style={{ border: 'none', borderRadius: '50%', backgroundColor: '#0f3460', color: 'white' }} >+</button>
+                                                </Link>
+                                            </h4>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

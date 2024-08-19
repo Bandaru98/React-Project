@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../Images/products';
@@ -45,7 +46,7 @@ const NewArrival = () => {
                       style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white' }} >
                       +
                     </button>
-                   </div>
+                  </div>
                 )}
                 <div className='card-body'>
                   <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -80,7 +81,7 @@ export default NewArrival;
 
 
 
-
+//---------
 
 // import React, { useEffect, useState } from 'react';
 // import { Link } from 'react-router-dom';
@@ -123,7 +124,7 @@ export default NewArrival;
 //                       <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
 //                       <i className="bi bi-heart-fill"></i>
 //                     </div> */}
-//                     <i class="bi bi-heart" style={{ top: '10px', right: '10px'}}></i>
+//                     {/* <i class="bi bi-heart" style={{ top: '10px',left: '10px'}}></i> */}
 //                 <div className='card-body'>
 //                   <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
 //                     <div className='card-img-top d-flex justify-content-center'>
@@ -140,7 +141,7 @@ export default NewArrival;
 //                       <i className="bi bi-star-fill ms-1" style={{ color: '#ffcd4e' }}></i>
 //                     </span>
 //                   </div>
-//                   <div className='d-flex justify-content-between'>
+//                   <div className='d-flex justify-content-between mb-4'>
 //                     <h6>$ {items.price}</h6>
 //                     <button
 //                       onClick={() => {
@@ -167,6 +168,8 @@ export default NewArrival;
 
 
 
+
+// ------
 
 
 
