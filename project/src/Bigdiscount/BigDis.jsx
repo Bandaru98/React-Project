@@ -25,6 +25,7 @@ const BigDis = () => {
                 <div className='d-flex justify-content-between m-2 p-3'>
                   <span className='p-2' style={{ backgroundColor: '#0f3460', color: 'white', borderRadius: '5px' }}>{items.discount}% off</span>
                 </div>
+
                 {hoveredCardId === items.id && (
                   <div>
                     <i className="bi bi-heart heart-icon" style={{ position: 'absolute', top: '10px', right: '10px' }} ></i>
@@ -34,11 +35,12 @@ const BigDis = () => {
                         dispatch(addToCart(items));
                         toast.success('Item added to cart!');
                       }}
-                      style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white'}}  >
+                      style={{ position: 'absolute', bottom: '10px', right: '10px', border: 'none', borderRadius: '50%', width: '30px', height: '30px', backgroundColor: '#0f3460', color: 'white' }}  >
                       +
                     </button>
                   </div>
                 )}
+
 
                 <div className='card-body'>
                   <Link to={`/product/${items.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
@@ -62,6 +64,7 @@ const BigDis = () => {
                   </div>
                 </div>
               </div>
+
             </div>
           ))}
         </div>

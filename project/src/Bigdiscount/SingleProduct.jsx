@@ -18,8 +18,6 @@ const SingleProduct = () => {
     const dispatch = useDispatch()
     const { id } = useParams();
 
-
-
     const [Reviews, setReviews] = useState([]);
 
     const [product, setProduct] = useState({});

@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { products } from '../Images/products';
@@ -8,6 +7,7 @@ import { addToCart } from '../Redux/ProductAction/ProductAction';
 import { useDispatch } from 'react-redux';
 
 const NewArrival = () => {
+  
   const dispatch = useDispatch();
   const [cartItems, setCartItems] = useState([]);
 
@@ -22,7 +22,7 @@ const NewArrival = () => {
       return item.category === 'mobile' || item.category === 'wireless';
     });
     setCartItems(temp);
-    console.log(temp);
+    // console.log(temp);
   };
 
   return (

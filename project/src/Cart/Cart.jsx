@@ -1,92 +1,84 @@
-import React, { useState } from 'react'
-import { useDispatch, useSelector } from "react-redux";
-import { removeFromCart } from '../Redux/ProductAction/ProductAction';
-
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { removeFromCart, setIncrement, setDecrement } from '../Redux/ProductAction/ProductAction';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
 
-  const [Value, setValue] = useState(1)
+  const dispatch = useDispatch();
 
-  const inputValue = () => {
-    setValue(Value + 1)
-  }
-  const outputValue = () => {
-    if (Value > 0) {
-      setValue(Value - 1)
-    }
-  }
 
-  const dispatch = useDispatch()
+  // const pron = products.map((item) => {
+  //   return item.price
+  // },[])
+  // console.log(pron);
 
-  const cart_data = useSelector((state) => state.productData.cartData)
-  console.log(cart_data);
+  const cart_data = useSelector((state) => state.productData.cartData);
+  // console.log(cart_data);
+  // let singleItems = cart_data.filter((value, index) => cart_data.indexOf(value) === index)
 
   const totalPrice = cart_data.reduce((prevsValue, currentValue) => {
-    return prevsValue + currentValue.price;
+    return prevsValue + currentValue.price * currentValue.quantity;
   }, 0)
 
+
   return (
-    <>
-      {/* Cart */}
-      <div className="container" style={{ backgroundColor: '#f6f9fc' }}>
-        <div className="row">
 
-          <div className="col-7">
-            {
-              cart_data && cart_data.length ? (
-                cart_data.map((item) => (
-
-                  <div className="row mt-4 mb-1 ms-4 mb-3" style={{ backgroundColor: '#ffffff', height: '200px' }}>
-
-                    <div className="col-md-4">
-                      <img src={item.imgUrl} alt="icon" className='img-fluid' />
-                    </div>
-                    <div className="col-md-8">
-                      <div className='card-title d-flex justify-content-between mt-4'>
-                        <h4 className="card-title">{item.productName}</h4>
-                        <h4 onClick={() => (dispatch(removeFromCart(item.id)))}>
-                          <i class="bi bi-x-lg"></i>
-                        </h4>
-                      </div>
-
-                      <div className="d-flex justify-content-between align-items-center mt-4">
-                        <h6><span>${item.price}</span>*
-                          <span>{Value}</span>
-                          <span className='ms-3'>${item.price * Value}</span>
-                        </h6>
-                        <div>
-                          <button style={{ border: '0px', width: '25px', height: '25px', backgroundColor: '#0f3460', color: 'white', paddingBottom: '3px' }} onClick={() => inputValue()}>+</button>
-                          <button onClick={() => outputValue()} className='ms-2' style={{ border: '0px', width: '25px', height: '25px', backgroundColor: '#0f3460', color: 'white', paddingBottom: '3px' }}>-</button>
-                        </div>
-                      </div>
-                    </div>
-
+    <div className='container' style={{ backgroundColor: '#f6f9fc' }}>
+      <div className='row d-flex justify-content-evenly'>
+        <div className='col-md-8'>
+          {
+            cart_data && cart_data.length ? (
+              cart_data.map((item) => (
+                <div className='row ms-1 me-1 mt-4 mb-4' style={{ backgroundColor: '#ffffff' }}>
+                  <div className='col-md-4 '>
+                    <img src={item.imgUrl} alt={item.id} className='img-fluid' />
                   </div>
-                ))
-              )
-                :
-                (<div className='text-center align-items-center mt-4 mb-4'>
-                  <h4>Empty Cart</h4>
-                </div>)
-            }
 
-          </div>
+                  <div className='col-md-8 '>
+                    <div className='d-flex justify-content-between' >
+                      <h4 className='mt-4'>{item.productName}</h4>
+                      <Link className='fw-bold mt-3' style={{ color: 'black' }}
+                        onClick={() => { dispatch(removeFromCart(item.id)) }}
+                      ><i className="bi bi-x-lg"></i></Link>
+                    </div>
 
-          <div className="col-1"></div>
+                    <div className='d-flex justify-content-between align-items-center mt-4'>
+                      <h6>
+                        <span className='text-secondary'>${item.price}</span> *
+                        <span className='text-secondary'> {item.quantity}</span>
+                        <span className='ms-4'>${item.quantity * item.price}</span>
+                      </h6>
 
-          {/* Cart Summary */}
-          <div className="col-4 mt-4" style={{ height: '200px', width: '300px', backgroundColor: '#ffffff' }}>
-            <h3>Cart Summary</h3><hr />
-            <p>Total Price:</p>
-            {/* <h3>${totalPrice}</h3> */}
+                      <div className='me-4'>
+                        <button className='pb-1' style={{ border: '0px', backgroundColor: '#0f3460', color: 'white' }} onClick={() => dispatch(setIncrement(item.id))} >+</button>
+                        <button className='ms-1 ps-2 pe-2 pb-1' style={{ border: '0px', backgroundColor: '#0f3460', color: 'white' }} onClick={() => dispatch(setDecrement(item.id))} >-</button>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              ))
+            ) : (
+              <div className='d-flex justify-content-center align-items-center' style={{ height: '25vh' }}>
+                <h4>No Items add in cart</h4>
+              </div>
+            )
+          }
+        </div>
+
+        {/* Cart Summary */}
+        <div className='col-md-4 mt-3 mb-3' >
+          <div className='row m-2' style={{ backgroundColor: '#ffffff', height: '25vh' }}>
+            <h5 className='mt-4'>Cart Summary</h5><hr />
+            <p>Total Price :</p>
             <h3>${totalPrice.toFixed(2)}</h3>
           </div>
         </div>
-      </div>
-    </>
 
+      </div>
+    </div>
   )
 }
 
 export default Cart
-

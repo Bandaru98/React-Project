@@ -19,7 +19,7 @@ const BestSales = () => {
     const getproducts = () => {
         const temp = products.filter((item) => item.category === 'sofa');
         setCartItems(temp);
-        console.log(temp);
+        // console.log(temp);
     };
 
     return (
