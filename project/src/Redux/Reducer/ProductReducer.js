@@ -56,7 +56,7 @@ export const productReducer = (state = initialState, action) => {
                 if (item.id === action.payload) {
                     // console.log(item);
                     // let outquantity = item.quantity - 1
-                    let outquantity = item.quantity > 1 ? item.quantity - 1 : 0
+                    let outquantity = item.quantity > 1 ? item.quantity - 1 : 1
                     return {
                         ...item, quantity: outquantity,
                     }
